@@ -15,19 +15,39 @@ export default createStore({
     usersList: state => state.users
 
   },
-  mutations: {
 
-    setUsers: (state, users) => (
-        state.users = users)
-
-  },
   actions: {
 
     async fetchUsers({commit}) {
       const response = await axios.get("http://localhost:3000/users");
       commit("setUsers", response.data)
-    }
+    },
 
+    async deleteUser({commit}, id){
+      await axios.delete(`http://localhost:3000/users/${id}`);
+      commit("removeUser", id)},
+
+
+
+
+/*
+    async addUsers({commit, user}) {
+      const response = await axios.post("http://localhost:3000/users", user);
+      commit("addNewUser", response.data)
+    },
+*/
+
+
+  },
+
+  mutations: {
+
+    setUsers: (state, users) => (
+        state.users = users),
+
+    removeUser: (state, id) => {
+      state.users = state.users.filter(user => user.id !== id)
+    },
   },
   modules: {
 

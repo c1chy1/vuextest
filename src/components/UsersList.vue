@@ -6,7 +6,7 @@
         <div class="d-flex w-100 justify-content-between">
           <h3>{{user.name}}</h3>
 
-          <small class="text-danger delete" @click="Delete">&#10005;</small>
+          <small class="text-danger delete" @click="deleteUser(user.id)">&#10005;</small>
         </div>
         <p>{{user.email}}
         </p>
@@ -28,12 +28,6 @@ export default {
 
     ...mapActions(["fetchUsers","deleteUser"]),
 
-
-
-    Delete()
-
-    { this.deleteUser( {
-      id: this.id})}
 
   },
 
