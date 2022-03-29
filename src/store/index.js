@@ -28,14 +28,10 @@ export default createStore({
       commit("removeUser", id)},
 
 
-
-
-/*
-    async addUsers({commit, user}) {
+    async addUser({commit}, user) {
       const response = await axios.post("http://localhost:3000/users", user);
       commit("addNewUser", response.data)
     },
-*/
 
 
   },
@@ -48,6 +44,8 @@ export default createStore({
     removeUser: (state, id) => {
       state.users = state.users.filter(user => user.id !== id)
     },
+
+    addNewUser: (state, user) => state.users.unshift(user),
   },
   modules: {
 

@@ -1,12 +1,12 @@
 <template>
   <div >
-    <ul class="list-group mt-5 mx-4 flex justify-between">
-      <li class="list-group-item list-group-item-action" v-for="user in usersList" :key="user.id">
+    <ul class="list-group mt-5 mx-4 flex justify-between flex-col ">
+      <li class="w-1/3 list-group-item list-group-item-action my-4 bg-yellow-300" v-for="user in usersList" :key="user.id">
+        <small class="text-danger delete" @click="deleteUser(user.id)">&#10005;</small>
 
-        <div class="d-flex w-100 justify-content-between">
+        <div class="d-flex  justify-content-between">
           <h3>{{user.name}}</h3>
 
-          <small class="text-danger delete" @click="deleteUser(user.id)">&#10005;</small>
         </div>
         <p>{{user.email}}
         </p>
