@@ -34,26 +34,11 @@ export default {
   ...mapActions(['addUser']),
 
 
-
-    newUser: function() {
-      // We use "commit" to call mutations in Vuex
-      this.$store.commit('addNewUser', {
-        name: this.$refs.username.value,
-        email: this.$refs.email.value,
-
-      })
-      // We can access getters via this.$store.getters
-      let allUsers = JSON.stringify(this.$store.getters.users);
-      console.log('New User Added!')
-      console.log(`All Users are here: ${allUsers}`);
-    },
-
-
-
     onSubmit() {
       // We use "commit" to call mutations in Vuex
       this.$store.commit('addNewUser', {
         name: this.$refs.username.value,
+        email: this.$refs.email.value,
       })
       // We can access getters via this.$store.getters
     }
