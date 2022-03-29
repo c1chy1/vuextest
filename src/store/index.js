@@ -45,7 +45,15 @@ export default createStore({
       state.users = state.users.filter(user => user.id !== id)
     },
 
-    addNewUser: (state, user) => state.users.unshift(user),
+/*    addNewUser(state, user) {
+      if(user.id !== undefined && typeof user.name == 'string' && typeof user.email == 'string') {
+        state.users.push({
+          name: user.name,
+          email: user.email
+        })
+      }
+    }*/
+    addNewUser: (state, user) => state.users.unshift(user)
   },
   modules: {
 
