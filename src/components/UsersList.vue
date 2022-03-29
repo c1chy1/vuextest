@@ -8,7 +8,8 @@
 
           <small class="text-danger delete" @click="Delete">&#10005;</small>
         </div>
-        <p>{{user.email}}</p>
+        <p>{{user.email}}
+        </p>
 
       </li>
     </ul>
