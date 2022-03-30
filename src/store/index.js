@@ -1,7 +1,5 @@
 import { createStore } from 'vuex'
-/*import UserModule from '../store/modules/user-module'*/
 import axios from 'axios'
-
 
 
 export default createStore({
@@ -31,15 +29,27 @@ export default createStore({
     async addUser({commit}, user ) {
       const response = await axios.post("http://localhost:3000/users", user);
       commit("addNewUser", response.data)
-
-
-    var test = response.data
+      var test = response.data
 
       console.log(test)
 
-
     },
 
+
+
+
+
+
+    async updateUser({ commit }, user) {
+      const response = await axios.get(
+          `http://localhost:3000/users/${user.id}`
+      )
+
+      console.log(response)
+      commit('updateUser', user)
+
+
+    }
 
   },
 
@@ -61,9 +71,6 @@ export default createStore({
           name: user.name,
           email: user.email
         })
-
-
-
 
     }
   },
