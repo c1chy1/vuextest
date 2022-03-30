@@ -1,14 +1,8 @@
 {
   "users": [
-
     {
       "id": 1,
       "name": "Leanne Graham",
-      "email": "Nathan@yesenia.net"
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
       "email": "Nathan@yesenia.net"
     },
     {
@@ -20,11 +14,6 @@
       "id": 4,
       "name": "Leanne Graham",
       "email": "Sincere@april.biz"
-    },
-    {
-      "id": 5,
-      "name": "Ervin Howell",
-      "email": "Shanna@melissa.tv"
     },
     {
       "id": 6,

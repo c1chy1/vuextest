@@ -52,26 +52,18 @@ export default createStore({
       state.users = state.users.filter(user => user.id !== id)
     },
 
-    addNewUser: (state, {name, email}) => {
+    addNewUser: (state, user) => {
 
 
       console.log(state.users)
 
-/*
-      if(typeof user.name == 'string' && typeof user.email == 'string') {
         state.users.push({
+
+          id: user.id,
           name: user.name,
           email: user.email
         })
-      }*/
 
-      state.users.push({
-        name,
-        email
-      })
-
-      console.log(name)
-      console.log(email)
 
 
 

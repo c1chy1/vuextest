@@ -36,16 +36,12 @@ export default {
 
     onSubmit() {
 
-      this.addUser(this.name)
+      this.addUser({
+          name: this.name,
+          email: this.email
+      })
 
-      this.addUser(this.email)
 
-      // We use "commit" to call mutations in Vuex
- /*     this.$store.commit('addNewUser', {
-        name: this.$refs.username.value,
-        email: this.$refs.email.value,
-      })*/
-      // We can access getters via this.$store.getters
     }
   },
 
