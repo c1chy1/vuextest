@@ -55,8 +55,6 @@ export default createStore({
     addNewUser: (state, user) => {
 
 
-      console.log(state.users)
-
         state.users.push({
 
           id: user.id,

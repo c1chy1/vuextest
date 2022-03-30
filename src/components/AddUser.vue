@@ -3,12 +3,9 @@
     <div class="form-group">
 
 
-      <input type="text" placeholder="Add a username.." id="username" :value="name">
+      <input type="text" placeholder="Add a username.." id="name" v-model="name">
       <input type="text" placeholder="Add an email.." id="email" v-model="email">
     </div>
-<!--    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Enter email" v-model="email">
-    </div>-->
     <button type="submit" value="Submit" class="btn btn-block btn-primary">Add</button>
   </form>
 </template>
@@ -23,6 +20,7 @@ export default {
 
   data() {
     return {
+      id: this.$store.state.users.id,
       name: '',
       email: '',
     }
@@ -37,6 +35,8 @@ export default {
     onSubmit() {
 
       this.addUser({
+
+          id : this.id,
           name: this.name,
           email: this.email
       })
