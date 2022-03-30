@@ -3,8 +3,8 @@
     <div class="form-group">
 
 
-      <input type="text" placeholder="Add a username.." id="username" ref="username">
-      <input type="text" placeholder="Add an email.." id="email" ref="email">
+      <input type="text" placeholder="Add a username.." id="username" :value="name">
+      <input type="text" placeholder="Add an email.." id="email" v-model="email">
     </div>
 <!--    <div class="form-group">
       <input type="text" class="form-control" placeholder="Enter email" v-model="email">
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       name: '',
-      email:''
+      email: '',
     }
   },
 
@@ -35,17 +35,21 @@ export default {
 
 
     onSubmit() {
+
+      this.addUser(this.name)
+
+      this.addUser(this.email)
+
       // We use "commit" to call mutations in Vuex
-      this.$store.commit('addNewUser', {
+ /*     this.$store.commit('addNewUser', {
         name: this.$refs.username.value,
         email: this.$refs.email.value,
-      })
+      })*/
       // We can access getters via this.$store.getters
     }
   },
 
   created() {
-
 
   },
 

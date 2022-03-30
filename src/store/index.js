@@ -28,9 +28,16 @@ export default createStore({
       commit("removeUser", id)},
 
 
-    async addUser({commit}, user) {
+    async addUser({commit}, user ) {
       const response = await axios.post("http://localhost:3000/users", user);
       commit("addNewUser", response.data)
+
+
+    var test = response.data
+
+      console.log(test)
+
+
     },
 
 
@@ -45,15 +52,30 @@ export default createStore({
       state.users = state.users.filter(user => user.id !== id)
     },
 
-/*    addNewUser(state, user) {
-      if(user.id !== undefined && typeof user.name == 'string' && typeof user.email == 'string') {
+    addNewUser: (state, {name, email}) => {
+
+
+      console.log(state.users)
+
+/*
+      if(typeof user.name == 'string' && typeof user.email == 'string') {
         state.users.push({
           name: user.name,
           email: user.email
         })
-      }
-    }*/
-    addNewUser: (state, user) => state.users.unshift(user)
+      }*/
+
+      state.users.push({
+        name,
+        email
+      })
+
+      console.log(name)
+      console.log(email)
+
+
+
+    }
   },
   modules: {
 
