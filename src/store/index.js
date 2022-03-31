@@ -40,16 +40,6 @@ export default createStore({
 
 
 
-    async updateUser({ commit }, user) {
-      const response = await axios.get(
-          `http://localhost:3000/users/${user.id}`
-      )
-
-      console.log(response)
-      commit('updateUser', user)
-
-
-    }
 
   },
 
@@ -72,7 +62,13 @@ export default createStore({
           email: user.email
         })
 
-    }
+    },
+
+
+
+
+
+
   },
   modules: {
 

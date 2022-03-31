@@ -13,7 +13,9 @@
         </div>
         <p>{{user.email}}
         </p>
-
+        <button class="btn btn-primary" @click="editMode = !editMode">
+          <i class="icon" :class="{ 'icon-edit': !editMode, 'icon-check': editMode }">EDIT</i>
+        </button>
       </li>
     </ul>
   </div>

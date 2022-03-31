@@ -36,10 +36,16 @@ export default {
 
       this.addUser({
 
+
+
           id : this.id,
           name: this.name,
           email: this.email
+
+
+
       })
+
 
 
     }
