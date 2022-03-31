@@ -19,7 +19,7 @@
 
 
         <template v-if="editMode">
-          <input type="number" class="form-input" v-model="user.name"/>
+          <input type="text" class="form-input" :value="user.name" @change="updateUser($event, 'name')" />
         </template>
         <template v-else>
           {{ user.name }}
@@ -34,7 +34,7 @@
 <script>
 
 
-import {mapGetters,mapActions} from "vuex";
+import {mapGetters,mapActions,mapMutations} from "vuex";
 
 export default {
   name: "UsersList",
@@ -48,8 +48,16 @@ export default {
 
 
   methods: {
-
+    ...mapMutations(["update"]),
     ...mapActions(["fetchUsers","deleteUser"]),
+
+    updateUser(e, type) {
+      this.update({
+        id: this.user.id,
+        type: type,
+        value: e.target.value
+      })
+    },
 
 
   },

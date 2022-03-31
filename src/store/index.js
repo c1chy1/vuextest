@@ -67,6 +67,15 @@ export default createStore({
 
 
 
+    update(state, payload) {
+      const index = _.findIndex(state.users, ["id", payload.id]);
+
+      state.users[index][payload.type] = payload.value;
+    },
+
+
+
+
 
 
   },
