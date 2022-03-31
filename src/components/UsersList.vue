@@ -16,6 +16,16 @@
         <button class="btn btn-primary" @click="editMode = !editMode">
           <i class="icon" :class="{ 'icon-edit': !editMode, 'icon-check': editMode }">EDIT</i>
         </button>
+
+
+        <template v-if="editMode">
+          <input type="number" class="form-input" v-model="user.name"/>
+        </template>
+        <template v-else>
+          {{ user.name }}
+        </template>
+
+
       </li>
     </ul>
   </div>
@@ -28,6 +38,14 @@ import {mapGetters,mapActions} from "vuex";
 
 export default {
   name: "UsersList",
+
+
+  data() {
+    return {
+      editMode: false
+    };
+  },
+
 
   methods: {
 
